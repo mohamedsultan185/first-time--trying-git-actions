@@ -14,11 +14,11 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: 'Login DockerHub'
-        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_TOKEN}}
+        run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{ secrets.DOCKER_TOKEN}}
 
       - name: 'Build docker image'
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage .
+        run: docker build -t ${{secrets.DOCKER_USERNAME}}/myimage .
 
 
       - name: 'Pushing to docker Hub'
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/muimage
+        run: docker push ${{secrets.DOCKER_USERNAME}}/muimage
